@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Freak Squad</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Freak Squad</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h3 class=&#34;tbh3&#34; id=&#34;ways-to-contact&#34;&gt;Ways to Contact&lt;/h3&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h4 class=&#34;tbh4&#34; id=&#34;email-ids-and-phone-no&#34;&gt;Email IDs and Phone No.&lt;/h4&gt;&#xA;&lt;p&gt;The best way to reach me is to drop an email at &lt;a href=&#34;mailto:ethan@freaksquad.org&#34;&gt;ethan@freaksquad.org&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Additionally you can contact me on my mobile number: +1 XXX-XXX-4985&#xA;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/</guid>
+      <description>&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;h2 class=&#34;tbh3&#34; id=&#34;research-interests&#34;&gt;Research Interests&lt;/h2&gt;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;swag&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;——&lt;/strong&gt; &lt;em&gt;Firstname Lastname&lt;/em&gt;, Institution&lt;/p&gt;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;br/&gt;&#xD;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam phasellus vestibulum lorem sed risus ultricies tristique. Bibendum at varius vel pharetra vel turpis nunc eget. Id eu nisl nunc mi ipsum. Ultrices in iaculis nunc sed augue lacus viverra. Adipiscing elit pellentesque habitant morbi tristique senectus et netus et.:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
