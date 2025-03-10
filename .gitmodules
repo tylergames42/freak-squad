@@ -1,0 +1,3 @@
+[submodule "themes/TatBanTheme"]
+	path = themes/TatBanTheme
+	url = https://github.com/tatsatb/TatBanTheme2.0.git
