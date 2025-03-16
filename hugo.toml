@@ -1,0 +1,4 @@
+baseURL = 'https://freaksquad.help/'
+languageCode = 'en-us'
+title = 'Freak Squad'
+theme = 'epicsauce'

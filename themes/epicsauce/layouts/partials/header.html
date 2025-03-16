@@ -1,0 +1,122 @@
+<style>
+	#logo {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 16px;
+		margin-bottom: -10vw;
+		width: 40%;
+	}
+
+	#logo-background {
+		margin-top: 0px;
+		background-image: radial-gradient(farthest-corner at 49% 0px, gray 0%, transparent 70%, transparent 100%);
+	}
+
+	#scroll-indicator{background-color:red;}
+
+    #navbar-container {
+		width: 100%;
+		transition: top 0.3s ease-in-out;
+		top: 0;
+	}
+
+    .curved-svg {
+        width: 100%;
+    }
+
+    .navbar-links textPath {
+        text-anchor: middle;
+		alignment-baseline: middle;
+    }
+	
+	.navbar-links a {
+		font-size: 48px;
+        font-weight: bold;
+		text-anchor: middle;
+		dominant-baseline: middle;
+		alignment-baseline: central;
+		fill: orange;
+		transition: fill 0.3s ease;
+		text-transform: uppercase;
+	}
+	
+	.navbar-links a:hover {
+		fill: white;
+	}
+	
+	.sticky {
+    position: fixed; /* Make it stick to the top when scrolling */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+}
+	
+</style>
+
+<div id="logo-background">
+<div id="logo">
+<a href="/home"><img src="/Images/freaksquad_logo.png" class="img-fluid" alt="Freak Squad Logo" style="width:100%";/></a>
+</div>
+
+<div id="navbar-container">
+    <svg id="curved-svg" viewBox="0 200 1000 180" preserveAspectRatio="xMidYMid meet">
+		<!--<path id="curve-back" d="M-10,275 Q500,375 1010,275" fill="red" stroke="red" stroke-width="1"/>
+	
+        <!-- Curved Path -->
+        <path id="curvePath" d="M-10,300 Q500,400 1010,300" fill="transparent" stroke="gray" stroke-width="50"/>
+
+        <!-- Curved Text Links -->
+        <text class="navbar-links">
+			<textPath href="#curvePath" startOffset="5%"><tspan style="font-size: 48px; dominant-baseline: middle; alignment-baseline: middle;">|</textPath>
+			//For some fucking reason the first link on the navbar is misaligned, so I have to make invisible text as the first link to fix it
+            <textPath href="#curvePath" startOffset="20%">
+				<tspan style="font-size: 0px; fill: transparent; opacity: 0;">fix</tspan>
+            </textPath>
+			<textPath href="#curvePath" startOffset="20%">
+				<a href="/home/">Home</a>
+            </textPath>
+			<textPath href="#curvePath" startOffset="35%"><tspan style="font-size: 48px; dominant-baseline: middle; alignment-baseline: middle;">|</textPath>
+            <textPath href="#curvePath" startOffset="50%">
+                <a href="/posts/">Posts</a>
+            </textPath>
+			<textPath href="#curvePath" startOffset="65%"><tspan style="font-size: 48px; dominant-baseline: middle; alignment-baseline: middle;">|</textPath>
+            <textPath href="#curvePath" startOffset="80%">
+                <a href="https://www.ninjaleaks.ninja">Tags</a>
+            </textPath>
+			<textPath href="#curvePath" startOffset="95%"><tspan style="font-size: 48px; dominant-baseline: middle; alignment-baseline: middle;">|</textPath>
+        </text>
+    </svg>
+</div>
+</div>
+
+
+<script> 
+    document.addEventListener("DOMContentLoaded", function() {
+		const navbarContainer = document.getElementById("navbar-container");
+        const path = document.getElementById("curvePath");
+
+        function updateCurve(intensity) {
+			if (intensity < 200) {intensity = 200; }
+			let newPath = `M-10,300 Q500,${100 + intensity} 1010,300`;
+			path.setAttribute("d", newPath);
+			navbarContainer.style.marginTop = `${300 - intensity}px`;
+        }
+
+        window.addEventListener("scroll", () => {
+            let intensity = 300 - (window.scrollY / 2);
+            updateCurve(intensity);
+			
+			//if (window.scrollY > 200) {
+			//	navbarContainer.classList.add("sticky");
+			//} else {
+			//	navbarContainer.classList.remove("sticky");
+			//}
+        });
+		
+		window.onload = function() {
+			let intensity = 300 - (window.scrollY / 2);
+            updateCurve(intensity);
+		};
+    });
+</script>
