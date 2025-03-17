@@ -13,8 +13,6 @@
 		background-image: radial-gradient(farthest-corner at 49% 0px, gray 0%, transparent 70%, transparent 100%);
 	}
 
-	#scroll-indicator{background-color:red;}
-
     #navbar-container {
 		width: 100%;
 		transition: top 0.3s ease-in-out;
@@ -39,17 +37,12 @@
 		fill: orange;
 		transition: fill 0.3s ease;
 		text-transform: uppercase;
+		text-shadow: 4px 6px 10px #bb6e4d;
 	}
 	
 	.navbar-links a:hover {
 		fill: white;
 	}
-	
-	.sticky {
-    position: fixed; /* Make it stick to the top when scrolling */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure it stays on top */
 }
 	
 </style>
@@ -69,10 +62,6 @@
         <!-- Curved Text Links -->
         <text class="navbar-links">
 			<textPath href="#curvePath" startOffset="5%"><tspan style="font-size: 48px; dominant-baseline: middle; alignment-baseline: middle;">|</textPath>
-			//For some fucking reason the first link on the navbar is misaligned, so I have to make invisible text as the first link to fix it
-            <textPath href="#curvePath" startOffset="20%">
-				<tspan style="font-size: 0px; fill: transparent; opacity: 0;">fix</tspan>
-            </textPath>
 			<textPath href="#curvePath" startOffset="20%">
 				<a href="/home/">Home</a>
             </textPath>
@@ -94,9 +83,18 @@
 <script> 
     document.addEventListener("DOMContentLoaded", function() {
 		const navbarContainer = document.getElementById("navbar-container");
-        const path = document.getElementById("curvePath");
+        const mainpath = document.getElementById("curvePath");
+		
+		var staticNavbar = navbarContainer.cloneNode(true);
+		staticNavbar.id = "navbar-container-fixed"
+		staticNavbar.style.position = "fixed";
+		staticNavbar.style.width = "100%";
+		staticNavbar.style.top = "-500px";
+		document.querySelector('header').appendChild(staticNavbar);
+		
+		const staticNavbarPath = staticNavbar.querySelector("#curvePath");
 
-        function updateCurve(intensity) {
+        function updateCurve(path, intensity) {
 			if (intensity < 200) {intensity = 200; }
 			let newPath = `M-10,300 Q500,${100 + intensity} 1010,300`;
 			path.setAttribute("d", newPath);
@@ -104,19 +102,22 @@
         }
 
         window.addEventListener("scroll", () => {
-            let intensity = 300 - (window.scrollY / 2);
-            updateCurve(intensity);
+            let intensity = 300 - (window.pageYOffset / 2);
+            updateCurve(mainpath, intensity);
 			
-			//if (window.scrollY > 200) {
-			//	navbarContainer.classList.add("sticky");
-			//} else {
-			//	navbarContainer.classList.remove("sticky");
-			//}
+			let scrollThreshold = navbarContainer.offsetTop + (navbarContainer.offsetHeight * 0.44); 
+			if (window.pageYOffset < scrollThreshold) {
+				staticNavbar.style.top = "-500px";
+			} else {
+				staticNavbar.style.top = "-8vw";
+				updateCurve(staticNavbarPath, 30);
+			}
         });
 		
 		window.onload = function() {
-			let intensity = 300 - (window.scrollY / 2);
-            updateCurve(intensity);
+			let intensity = 300 - (window.pageYOffset / 2);
+            updateCurve(mainpath, intensity);
+			staticNavbar.style.top = "-500px";
 		};
     });
 </script>
