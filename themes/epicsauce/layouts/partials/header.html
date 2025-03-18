@@ -105,11 +105,11 @@
             let intensity = 300 - (window.pageYOffset / 2);
             updateCurve(mainpath, intensity);
 			
-			let scrollThreshold = navbarContainer.offsetTop + (navbarContainer.offsetHeight * 0.44); 
+			let scrollThreshold = navbarContainer.offsetTop + (navbarContainer.offsetHeight * 0.41); 
 			if (window.pageYOffset < scrollThreshold) {
 				staticNavbar.style.top = "-500px";
 			} else {
-				staticNavbar.style.top = "-8vw";
+				staticNavbar.style.top = "-7.5vw";
 				updateCurve(staticNavbarPath, 30);
 			}
         });
