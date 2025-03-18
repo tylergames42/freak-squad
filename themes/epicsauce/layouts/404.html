@@ -1,4 +1,19 @@
 {{ define "main" }}
+	<style>
+		#cool-emoji {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			animation: rotateAnimation 5s linear infinite;
+		}
+		
+		@keyframes rotateAnimation {
+			from {transform: rotateY(0deg);}
+			to {transform: rotateY(360deg);}
+		}	
+	</style>
+	
+
 	<h1>404 Not Found</h1>
 	<p>The page you requested cannot be found.</p>
 	<p>
@@ -7,5 +22,5 @@
 		</a>
 	</p>
 	
-	<img align="right" src="/Images/shocked.jpg">
+	<div id="cool-emoji"><img src="/Images/shocked.png"></div>
 {{ end }}
